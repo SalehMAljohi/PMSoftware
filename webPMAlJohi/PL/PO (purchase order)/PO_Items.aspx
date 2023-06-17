@@ -1,0 +1,104 @@
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/PL/shared/_MainLayout.Master" CodeBehind="PO_Items.aspx.vb" Inherits="webPMAlJohi.PO_Items" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="container " style ="background-image :url(../../images/alj1.jpeg) ;
+           direction :rtl;"  id="InsPInfo">
+             <div class="row " style="direction:rtl;margin-right:auto;">
+                                       <b>ربط البنود  بتعميد من ملف اكسل</b>
+             </div>
+        <div class ="row" >
+                <div class="col">
+             <b>اختار  رقم التعميد :</b>
+            </div>
+            <div class="col">
+                <asp:DropDownList ID="DDLPONo" runat="server"></asp:DropDownList>
+            </div>
+        </div> 
+         <div class ="row" >
+                <div class="col">
+             <b>اختار  البنود :</b>
+
+            </div>
+         </div> 
+        <center>
+                 <div class ="row" >
+
+                <div class="col"> 
+                    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="Item_no">
+                        <ClientSideEvents SelectionChanged="function(s, e) {
+	var isChecked = s.GetChecked(); 
+    var topIndex = aspxgridview1.GetTopVisibleIndex();
+    var rowsCount = aspxgridview1.GetVisibleRowsOnPage(); 
+    for (var i = topIndex ; i &lt; topIndex + rowsCount; i++) { 
+var cb = ASPxClientCheckBox.Cast('cbCheck' + i);
+ cb.SetChecked(isChecked); } 
+}" />
+                        <Settings ShowFilterRow="True" />
+<SettingsCommandButton>
+<ShowAdaptiveDetailButton ButtonType="Image"></ShowAdaptiveDetailButton>
+<HideAdaptiveDetailButton ButtonType="Image"></HideAdaptiveDetailButton>
+</SettingsCommandButton>
+                        <Columns>
+                            <dx:GridViewCommandColumn SelectAllCheckboxMode="Page"
+                  ShowClearFilterButton="True" ShowSelectCheckbox="True" VisibleIndex="0">
+                            </dx:GridViewCommandColumn>
+                            <dx:GridViewDataTextColumn FieldName="STC_Item_no" VisibleIndex="1">
+                                <SettingsHeaderFilter>
+                                    <DateRangePickerSettings EditFormatString="" />
+                                </SettingsHeaderFilter>
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn FieldName="Item_Des" VisibleIndex="2">
+                                <SettingsHeaderFilter>
+                                    <DateRangePickerSettings EditFormatString="" />
+                                </SettingsHeaderFilter>
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn FieldName="Item_Unit" VisibleIndex="3">
+                                <SettingsHeaderFilter>
+                                    <DateRangePickerSettings EditFormatString="" />
+                                </SettingsHeaderFilter>
+                            </dx:GridViewDataTextColumn>
+                            <dx:GridViewDataTextColumn FieldName="Item_no" ReadOnly="True" VisibleIndex="4">
+                                <SettingsHeaderFilter>
+                                    <DateRangePickerSettings EditFormatString="" />
+                                </SettingsHeaderFilter>
+                                <EditFormSettings Visible="False" />
+                            </dx:GridViewDataTextColumn>
+                        </Columns>
+                    </dx:ASPxGridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PMSoftwareConnectionString %>" SelectCommand="SELECT * FROM [Tbl_Items]"></asp:SqlDataSource>
+                </div>
+            </div>
+
+        </center>
+             <div class ="row">
+                <div class="col">
+             <b>اختار ملف البنود :</b>
+
+            </div>
+                <div class="col"> 
+                             <asp:FileUpload ID="FileUpload1" runat="server" />
+
+                </div>
+            </div>
+             <div class ="row">
+                <div class="col">
+           <asp:Button ID="btn_Add" Class="btn btn-success"  runat="server" Text=" ربط البنود بتعميد الى قاعدة البيانات "  />
+
+            </div>
+                <div class="col"> 
+                <asp:Button ID="btn_Close" OnClientClick ="return LogOut();" Class="btn btn-success" runat="server" Text="خروج" Width="200px" />
+                </div>
+            <div class="col"> 
+                            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                </div>
+            </div>       
+    </div>
+            <script >
+            function LogOut() {
+                window.location.replace("../PO (purchase order)/WebFrm_insPOInfo.aspx");
+                return false;
+                               }
+    </script>
+</asp:Content>

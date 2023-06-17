@@ -1,0 +1,143 @@
+﻿<%@ Master Language="VB"  AutoEventWireup="false"  CodeBehind="_MainLayout.master.vb" Inherits="webPMAlJohi._MainLayout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+   <%--   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  --%>  <asp:ContentPlaceHolder ID="head" runat="server">
+      
+
+    </asp:ContentPlaceHolder>
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+       <script src="../../Scripts/jquery.js"></script>
+      <script src="../../Scripts/popper.min.js"></script>
+      <script src="../../Scripts/bootstrap.min.js"></script>
+      <link href="../../Content/Style.css" rel="stylesheet" />
+    <link href="../../Content/font/font-awesome.css" rel="stylesheet" />
+    <link href="../../Content/font/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body style="direction :rtl;">
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-md static-top">
+
+<%--    <nav class="navbar navbar-default  navbar-fixed-top   ">--%>
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggler-icon" type="button"
+                     data-toggle="collapse" 
+                    data-target="#navbar"aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <%--<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>--%>
+                <span class="fas fa-bars fa-1x"></span>
+                </button>
+                <a href="../webFRM/WebFRM_TEST.aspx" class="navbar-brand "> 
+                   <img src="../../images/images (16).ico" class="logo-size " />
+                </a>
+            </div>
+       <div  class=" collapse navbar-collapse " id="navbar">
+        <ul class="navbar-nav ml-auto">
+            <li >
+                <a href="../webFRM/WebFRM_TEST.aspx">
+        <i class="glyphicon glyphicon-home"></i>   الرئيسية </a>
+            </li>
+     <li class="dropdown">
+          <a  href="#" class="dropdown-toggle"
+               data-toggle="dropdown"> 
+            <i class="glyphicon glyphicon-th-list"></i>   المشاريع 
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li><a href="../webFRM/WebFrm_insProjectInfo.aspx">اضافة مشروع</a></li>
+          <li><a href="../webFRM/WebFrm_Get_All_ProjectInfo.aspx">عرض مشروع</a></li>
+          <li class="divider"></li>
+          <li><a href="../Main_Contractors/WebFrm_Main_insMainContractors.aspx">اضافة المقاول الرئيسي</a></li> 
+          <li><a href="../webFRM/WebFrm_Get_All_ProjectInfo.aspx">عرض المقاول الرئيسي</a></li>
+          <li class="divider"></li>
+          <li><a href="../Company/WebFrm_insCompanyInfo.aspx"> اضافة معلومات المؤسسة</a></li>
+          <li><a href="../webFRM/WebFrm_SubContractorInfo.aspx"> عرض معلومات المؤسسة</a></li>
+                  </ul>
+           </li>          
+             <li class="dropdown">
+          <a  href="#" class="dropdown-toggle"
+               data-toggle="dropdown"><i class="glyphicon glyphicon-list-alt"></i>   البنود  
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li><a href="../items/WebFrm_MainItems.aspx">اضافة بنود </a></li>
+          </ul> 
+          </li> 
+             <li class="dropdown">
+          <a  href="#" class="dropdown-toggle"
+               data-toggle="dropdown"> 
+       <i class="glyphicon glyphicon-folder-open"></i>   التعميدات 
+             <span class="caret"></span></a>
+     <ul class="dropdown-menu">
+        <li><a href="../PO (purchase order)/WebFrm_insPOInfo.aspx">اضافة تعميد</a></li>
+        <li><a href="../PO (purchase order)/WebFrm_Get_All_POInfo.aspx">عرض تعميد</a></li>
+     </ul>
+   </li>
+                 
+     <li class="dropdown">
+          <a  href="#" class="dropdown-toggle"
+               data-toggle="dropdown"><i class="glyphicon glyphicon-briefcase"></i>   امر عمل  
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li><a href="../WorkOrders/WebFrm_insMWorkOrders.aspx">اضافة امر عمل رئيسي </a></li>
+          </ul> 
+          </li> 
+
+             <li class="dropdown">
+          <a  href="#" class="dropdown-toggle"
+               data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>   مقاول الباطن    
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li><a href="../Subcontractor/WebFrm_SubContractorInfo.aspx">اضافة مقاول الباطن </a></li>
+           <li><a href="../items/WebFrm_SubItems.aspx">اضافة بنود مقاول  الباطن</a></li>
+           <li><a href="../Subcontractor/WebFrm_insSubConContract.aspx">اضافة عقد مقاول  الباطن</a></li>
+           <li><a href="../Subcontractor/WebFrm_SubConWOrder.aspx">اضافة امر عمل مقاول الباطن</a></li>
+          </ul> 
+          </li>  
+              <li class="dropdown">
+          <a  href="#" class="dropdown-toggle"
+               data-toggle="dropdown"><i class="glyphicon glyphicon-tasks"></i>   الاصناف   
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li><a href="../Profiles/WebFrm_insProfileInfo.aspx">اضافة الصنف</a></li>
+           <li><a href="../Profiles/WebFrm_insProfItems.aspx">اضافة صنف البنود</a></li>
+          <li><a href="../webFRM/WebFrm_Get_All_ProjectInfo.aspx">عرض الاصناف</a></li>
+          </ul> 
+          </li>  
+        </ul> 
+            </div>
+        </div>
+    </nav>
+        <%-- هنا الحتوى الذي ياتي من باقي الصفحات --%>
+    <div class ="container">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+<%--          <div class ="row">
+              <div class ="col-lg-9"></div>
+              <div class="col-lg-3 ">  <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button"
+       data-toggle="dropdown">Dropdown Example
+  <span class="caret"></span></button>
+  <div class="dropdown-menu">
+    <div><a href="#">HTML</a></div>
+    <div><a href="#">CSS</a></div>
+    <div><a href="#">JavaScript</a></div>
+  </div>
+</div>
+</div>
+
+          </div> --%>
+        </asp:ContentPlaceHolder>
+    </div>
+         
+    </form>
+   
+    
+</body>
+</html>

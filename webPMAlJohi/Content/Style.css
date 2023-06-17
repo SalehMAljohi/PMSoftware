@@ -1,0 +1,99 @@
+﻿@font-face{
+    font-family:myfont;
+    src:url('font/GE_SS_Two_Bold.otf')
+}
+@font-face{
+    font-family:myfont2;
+    src:url('font/DroidKufi-Regular.ttf')
+}
+body
+{
+    padding-top:0px;
+    direction:rtl;
+}
+p{
+    color:red;
+}
+/*p{
+    color:wheat;
+}*/
+h3
+{
+    color:wheat;
+}
+.navbar-expand-md {
+    background-color: green;
+    border-color: #e7e7e7;
+    /*height: 75px;
+    padding: 10px;*/
+}
+a.dropdown-toggle{
+    margin:10px;
+}
+.navbar-expand-md .navbar-nav > li > a {
+    color: white;
+    font-family: myfont;
+}
+ .navbar-nav>li>a:hover {
+    color:papayawhip;
+}
+.navbar-expand-md{}
+/*.nav>li {
+    position: relative;
+    display: block;
+    height: 65px;
+    padding-top: 10px;
+}*/
+/*#navbar .collapse .navbar-collapse {
+    position: relative;
+    direction: rtl;
+}*/
+.navbar-expand-md .navbar-collapse, .navbar-expand-md .navbar-form {
+    background-color: green ;
+    border-color: white;
+    text-align:right;
+}
+tbody{
+    direction:rtl;
+    text-align:right;
+}
+.col{
+    padding :4px;
+    margin-right:0px;
+    text-align:right;
+}
+ul.dropdown-menu.show{
+    background-color:limegreen;
+    direction:rtl;
+    text-align:right;
+}
+ul.dropdown-menu.show >li>a{
+    color:floralwhite;
+}
+    .myfooter {
+        background-color: crimson;
+        font-family: myfont;
+        padding-top: 10px;
+        text-align: justify;
+    }
+  table.table{
+      direction:rtl;
+  }
+.myfooter h3,ul,p{
+    margin-bottom:20px;
+    font-family:myfont2;
+    list-style:none;
+}
+.myfooter a{
+    color:aliceblue;
+}
+.subfooter{
+    background-color:firebrick;
+    font-family:myfont;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+.logo-size{
+    margin-top:2px;
+} 
